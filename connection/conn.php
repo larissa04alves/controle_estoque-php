@@ -4,7 +4,7 @@ define("HOST", "localhost");
 define("USER", "postgres");
 define("PASS", "admin");
 define("DATABASE", "estoque-db");
-define ("PORT", "5431");
+define("PORT", "5431");
 
 try {
     //connection postgres
@@ -13,7 +13,6 @@ try {
     // Configurar o PDO para lançar exceções em caso de erro
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    echo "Conexão bem-sucedida!";
 } catch (PDOException $e) {
     echo 'Falha na conexão: ' . $e->getMessage();
 }
