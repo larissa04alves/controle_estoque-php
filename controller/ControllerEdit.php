@@ -1,5 +1,7 @@
 <?php
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 require_once ("../model/db.php");
 
 class editController
@@ -30,6 +32,7 @@ class editController
         } else {
             echo "Erro ao editar item!";
         }
+        header("Location: ../view/index.php");
     }
 
     public function getNome()
@@ -52,4 +55,3 @@ if (isset($_POST['submit'])) {
     $edit->editForms($_POST['nome'], $_POST['preco'], $_POST['quantidade'], $id);
 }
 
-?>

@@ -1,6 +1,5 @@
-<header class="bg-[#101E24] flex justify-between w-full px-12 h-16 border-b-[0.01rem] border-[#D1D1D1] ">
+<header class="bg-[#101E24] flex justify-between w-full px-12 h-20 border-b-[0.01rem] border-[#D1D1D1] mb-10 ">
     <div class="flex gap-7 items-center">
-        <img class="w-14">
         <h1 class="text-[1.6rem] text-white">Digital Zone</h1>
     </div>
     <div class="flex items-center">

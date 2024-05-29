@@ -1,18 +1,23 @@
 <?php
 
-require_once("../model/db.php");
+require_once ("../model/db.php");
 
-class deleteController{
+class deleteController
+{
     private $delete;
 
-    public function __construct($id){
+    public function __construct($id)
+    {
         $this->delete = new db();
-        if($this->delete->deleteIten($id) == true){
-            echo "Item deletado com sucesso!";
-        }else{
-            echo "Erro ao deletar item!";
-        }   
+        if ($this->delete->deleteIten($id)) {
+            header("Location: ../view/index.php");
+            exit;
+        } else {
+            header("Location: ../view/index.php");
+            exit;
+        }
     }
 }
+
 new deleteController($_GET['id']);
-?>
+

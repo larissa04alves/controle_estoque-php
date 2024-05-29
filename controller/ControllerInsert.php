@@ -8,16 +8,18 @@ class insertController
 
     public function __construct()
     {
-        $this->register = new Itens();
-        $this->addIten();
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $this->register = new Itens();
+            $this->addIten();
+        }
     }
 
     private function addIten()
     {
+        var_dump($_POST);
         $this->register->setNome($_POST['nome']);
         $this->register->setPreco($_POST['preco']);
         $this->register->setQuantidade($_POST['quantidade']);
-        $this->register->addIten();
         $result = $this->register->addIten();
         if ($result) {
             header("Location: ../view/index.php");
@@ -25,7 +27,7 @@ class insertController
             echo "Erro ao inserir produto";
         }
     }
+
 }
 
 new insertController();
-?>
