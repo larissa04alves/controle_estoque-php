@@ -3,7 +3,6 @@ require_once ("../controller/ControllerEdit.php");
 $id = filter_input(INPUT_GET, 'id');
 $edit = new editController($id);
 ?>
-
 <div
     class="absolute w-full h-full flex justify-center items-center bg-black bg-opacity-45 <?php echo isset($_GET['edit']) && $_GET['edit'] == 'true' ? '' : 'hidden'; ?>">
     <form class="flex flex-col items-center justify-center h-72 text-white bg-gray-800 rounded-[0.8rem]" method="post"

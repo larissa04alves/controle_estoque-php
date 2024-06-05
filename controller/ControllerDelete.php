@@ -6,6 +6,7 @@ class deleteController
 {
     private $delete;
 
+    //Função que deleta um item
     public function __construct($id)
     {
         $this->delete = new db();

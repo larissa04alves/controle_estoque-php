@@ -15,17 +15,13 @@ if (isset($_GET['edit']) && $_GET['edit'] == 'true' && isset($_GET['id'])) {
         src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
 
     <link rel="stylesheet" href="css/reset.css">
+
+    <script src="js/search.js"></script>
 </head>
 
 <body class="bg-[#101E24] flex flex-col w-full h-screen">
     <?php include ('header.php') ?>
 
-    <section class="flex flex-col items-center pb-10 w-full">
-        <div id="busca_texto" class="flex  w-1/3 justify-center items-center gap-5">
-            <input class="bg-inherit border rounded-xl  w-full text-white  font-semibold hover:border-blue-600"
-                type="text" placeholder="Procurar produtos ...">
-        </div>
-    </section>
 
     <div class="flex flex-col w-full h-full items-center">
         <table class="w-[80%]">
@@ -48,7 +44,7 @@ if (isset($_GET['edit']) && $_GET['edit'] == 'true' && isset($_GET['id'])) {
                     echo "<td class='flex w-1/6 justify-center items-center'>" . $item['nome'] . "</td>";
                     echo "<td class='flex w-1/6 justify-center items-center'>" . $item['preco'] . "</td>";
                     echo "<td class='flex w-1/6 justify-center items-center'>" . $item['quantidade'] . "</td>";
-                    echo "<td class='flex w-1/6 justify-center items-center'>";
+                    echo "<td class='flex w-1/6 justify-center items-center hover:text-[#00B65C]'>";
                     echo "<form action='index.php' method='get'>";
                     echo "<input type='hidden' name='id' value='" . $item['id'] . "'>";
                     echo "<input type='hidden' name='edit' value='true'>";

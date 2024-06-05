@@ -17,6 +17,7 @@ class editController
         $this->createForms($id);
     }
 
+    //Função que cria os formulários
     private function createForms($id)
     {
         $row = $this->edit->searchIten($id);
@@ -25,6 +26,7 @@ class editController
         $this->quantidade = $row['quantidade'];
     }
 
+    //Função que edita os itens
     public function editForms($nome, $preco, $quantidade, $id)
     {
         if ($this->edit->updateIten($nome, $preco, $quantidade, $id) == true) {
@@ -34,7 +36,6 @@ class editController
         }
         header("Location: ../view/index.php");
     }
-
     public function getNome()
     {
         return $this->nome;
@@ -49,6 +50,7 @@ class editController
     }
 }
 
+//Aqui é onde é instanciado o objeto
 $id = filter_input(INPUT_GET, 'id');
 $edit = new editController($id);
 if (isset($_POST['submit'])) {

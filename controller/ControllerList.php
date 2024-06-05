@@ -1,16 +1,27 @@
 <?php
 
-require_once("../model/db.php");
+require_once ("../model/db.php");
 
-class listController {
+//Aqui é a classe que controla a listagem dos itens
+class listController
+{
     private $list;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->list = new db();
     }
 
-    public function getItens() {
-        return $this->list->listIten();
+    //Função que retorna os itens
+    public function getItens()
+    {
+        $result = $this->list->listIten();
+        if ($result) {
+            return $result;
+        } else {
+            $itens = array();
+            return $itens;
+        }
     }
 }
-?>
+

@@ -14,6 +14,7 @@ class insertController
         }
     }
 
+    //Função que adiciona um item
     private function addIten()
     {
         var_dump($_POST);
@@ -30,4 +31,5 @@ class insertController
 
 }
 
+//Aqui é onde é instanciado o objeto
 new insertController();
